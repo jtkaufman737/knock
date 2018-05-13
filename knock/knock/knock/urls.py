@@ -19,4 +19,7 @@ from django.urls import include,path
 urlpatterns = [
     path('knockapp/', include('knockapp.urls')),
     path('admin/', admin.site.urls),
+    path('', views.index, name='index'),
+    path('<int:question_id>/', views.detail, name='detail'),
+    path('<int:question_id>/results',views.results, name='results'),
 ]
